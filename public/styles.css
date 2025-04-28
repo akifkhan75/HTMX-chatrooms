@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #eef;
+    border-radius: 4px;
+}
+
+.create-room {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.create-room input {
+    padding: 8px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.rooms-container {
+    margin-top: 20px;
+}
+
+.room {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.room-info {
+    flex-grow: 1;
+}
+
+.room-actions button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.join-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+button {
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

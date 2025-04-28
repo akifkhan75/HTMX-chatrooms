@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMX Chat Rooms</title>
+  <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+  <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Chat Rooms</h1>
+
+    <div class="user-section">
+      <label for="username">Your Username:</label>
+      <input type="text" id="username" name="username" hx-post="/api/currentUser" hx-trigger="change"
+        hx-target=".user-section" hx-swap="innerHTML">
+      <div id="user-display"></div>
+    </div>
+
+    <div class="create-room">
+      <h2>Create New Room</h2>
+      <form hx-post="/api/rooms" hx-ext="json-enc" hx-target="#rooms-list" hx-swap="beforeend" hx-trigger="submit"
+        _="on htmx:afterRequest trigger roomChanged from body">
+        <input type="text" name="name" placeholder="Room name" required>
+        <!-- <input type="hidden" name="creator" id="creatorInput"> -->
+
+        <!-- <input type="hidden" name="creator"
+         hx-get="/api/currentUser" 
+         hx-trigger="load, userChanged from:body"
+         hx-swap="afterbegin"
+         hx-select="input[name='creator']"
+         value=""> -->
+
+        <button type="submit">Create</button>
+      </form>
+    </div>
+
+    <div class="rooms-container">
+      <h2>Available Rooms</h2>
+      <div id="rooms-list" hx-get="api/rooms" hx-indicator="#loading"
+        hx-trigger="load, roomChanged, userChanged from:body" hx-swap="innerHTML">
+        <div id="loading" class="htmx-indicator">Loading rooms...</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+</html>
