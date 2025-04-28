@@ -13,8 +13,8 @@ A simple PoC chat room application for HTMX for CRUD operations.
 ## Setup
 
 1. Clone this repository or download the files
-2. run npm install
-3. run npm run dev
+2. npm install
+3. npm run dev
 
 ## Usage
 
