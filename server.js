@@ -15,16 +15,16 @@ app.post('/api/currentUser', (req, res) => {
     res.send(`<p>Logged in as: <strong>${username}</strong></p>`);
 })
 
-app.get('/api/currentUser', (req, res) => {
-    res.send(`
-        <input type="hidden" name="creator" 
-               value="${currentUser || ''}"
-               hx-get="/api/currentUser"
-               hx-trigger="load, userChanged from:body"
-               hx-target="this"
-               hx-swap="outerHTML">
-    `);
-});
+// app.get('/api/currentUser', (req, res) => {
+//     res.send(`
+//         <input type="hidden" name="creator" 
+//                value="${currentUser || ''}"
+//                hx-get="/api/currentUser"
+//                hx-trigger="load, userChanged from:body"
+//                hx-target="this"
+//                hx-swap="outerHTML">
+//     `);
+// });
 
 app.get('/api/rooms', (req, res) => {
     const roomsList = rooms.map(room => {

@@ -1,6 +1,6 @@
 # HTMX Chat Rooms - CRUD PoC
 
-A simple proof-of-concept chat room application demonstrating HTMX for CRUD operations.
+A simple PoC chat room application for HTMX for CRUD operations.
 
 ## Features
 
@@ -13,8 +13,8 @@ A simple proof-of-concept chat room application demonstrating HTMX for CRUD oper
 ## Setup
 
 1. Clone this repository or download the files
-2. Open `index.html` in a modern web browser
-   - No server required as it uses mock API calls
+2. run npm install
+3. run npm run dev
 
 ## Usage
 
@@ -33,9 +33,3 @@ The application uses HTMX attributes to handle all CRUD operations:
 - `hx-target` to specify where to place the response
 - `hx-swap` to control how content is inserted
 - Custom events to refresh the room list after changes
-
-## Limitations
-
-- No actual chat functionality (focus is on room CRUD)
-- No persistence (data is lost on page refresh)
-- No authentication (simple username check)
